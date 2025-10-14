@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antony - Android Developer</title>
+    <title>Antony Kobia - Android Developer</title>
     <style>
         * {
             margin: 0;
@@ -44,14 +44,36 @@
             margin-bottom: 30px;
         }
 
-        .social-links {
+        .cta-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-        .social-links a {
+        .btn-primary {
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
             color: white;
             text-decoration: none;
             padding: 12px 30px;
@@ -61,11 +83,18 @@
             font-weight: 600;
         }
 
-        .social-links a:hover {
+        .btn-secondary:hover {
             background: white;
             color: #667eea;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
         }
 
         .content {
@@ -104,6 +133,53 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
+        }
+
+        .education-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .education-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .role {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .projects-grid {
@@ -184,10 +260,61 @@
             font-weight: 600;
             color: #667eea;
             transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .skill-item:hover {
             transform: scale(1.05);
+        }
+
+        .skill-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            width: 280px;
+            margin-top: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .skill-tooltip.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .skill-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
+
+        .skill-tooltip h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tooltip p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: normal;
         }
 
         .contact-section {
@@ -274,7 +401,7 @@
                 font-size: 1.8rem;
             }
 
-            .social-links {
+            .social-links, .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
@@ -284,11 +411,15 @@
 <body>
     <div class="container">
         <header>
-            <h1>Antony</h1>
-            <p class="tagline">Android Developer passionate about creating useful mobile apps</p>
+            <h1>Antony Kobia</h1>
+            <p class="tagline">Aspiring Software Engineer passionate about building user-focused applications</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary" onclick="downloadResume(event)">📄 Download Resume</a>
+                <a href="#contact" class="btn-primary">💼 Hire Me</a>
+            </div>
             <div class="social-links">
-                <a href="https://github.com/meridianskobbie" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/antony-munene-41325a37b" target="_blank">LinkedIn</a>
+                <a href="https://github.com/meridianskobbie" target="_blank" class="btn-secondary">GitHub</a>
+                <a href="https://www.linkedin.com/in/antony-munene-41325a37b" target="_blank" class="btn-secondary">LinkedIn</a>
             </div>
         </header>
 
@@ -296,16 +427,50 @@
             <section id="about">
                 <h2>About Me</h2>
                 <p class="about-text">
-                    Hello! I'm Antony, an Android developer with a passion for building mobile applications 
+                    Hello! I'm Antony Kobia, a Software Engineering student at Kisii University with a passion for building mobile applications 
                     that solve real-world problems. I focus on creating clean, efficient, and user-friendly 
                     apps using modern Android development tools and best practices. I believe in writing 
                     maintainable code and continuously learning new technologies to improve my craft.
                 </p>
             </section>
 
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-card">
+                    <h3>Bachelor of Science in Software Engineering</h3>
+                    <p><strong>Kisii University</strong></p>
+                    <p>Expected Graduation: 2026</p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Advanced Android Application Developer</h3>
+                    <p class="role">Independent Developer | 2022 – Present</p>
+                    <ul>
+                        <li>Designed, built, and deployed multiple production-grade Android applications on Google Play Store.</li>
+                        <li>Developed full-stack Android apps using Kotlin + Jetpack Compose (frontend) and Ktor (backend).</li>
+                        <li>Implemented offline-first architecture, modern UI/UX with Material Design 3, and Firebase integration.</li>
+                        <li>Collaborated with testers and early adopters to improve performance, security, and user experience.</li>
+                        <li>Experienced with version control (Git) and Play Store release management.</li>
+                    </ul>
+                </div>
+            </section>
+
             <section id="projects">
                 <h2>Projects</h2>
                 <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>ID Generation System</h3>
+                        <p>Developed a complete digital ID generation system with secure backend management using Ktor. Implemented clean architecture ensuring modularity, maintainability, and scalability with Jetpack Compose for a sleek, dynamic interface.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Ktor</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Material You</span>
+                        </div>
+                    </div>
                     <div class="project-card">
                         <h3>Todify</h3>
                         <p>A basic to-do list application demonstrating local data persistence using Room Database. Features task creation, categorization, and a modern Material Design 3 UI built with Jetpack Compose.</p>
@@ -319,7 +484,7 @@
                     </div>
                     <div class="project-card">
                         <h3>Scribolt</h3>
-                        <p>A feature-rich note-taking application with customization options. Users can create, delete, and duplicate notes, mark favorites, and personalize their notes with custom font sizes, styles, and colors. Built with modern Android architecture.</p>
+                        <p>A feature-rich note-taking application with customization options. Users can create, delete, and duplicate notes, mark favorites, and personalize their notes with custom font sizes, styles, and colors.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Kotlin</span>
                             <span class="tech-tag">Jetpack Compose</span>
@@ -328,21 +493,92 @@
                         </div>
                         <a href="https://github.com/meridianskobbie/Scribolt" class="project-link" target="_blank">View Project</a>
                     </div>
-                    <!-- Add more projects here as you build them -->
+                    <div class="project-card">
+                        <h3>Published Android Applications</h3>
+                        <p>Released multiple applications on Google Play Store, showcasing advanced Android development capabilities with user-friendly interfaces and efficient backend services for real-world utility.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Play Store</span>
+                            <span class="tech-tag">Full-Stack</span>
+                            <span class="tech-tag">Production</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="skills">
                 <h2>Skills & Technologies</h2>
                 <div class="skills-grid">
-                    <div class="skill-item">Kotlin</div>
-                    <div class="skill-item">Android Studio</div>
-                    <div class="skill-item">Jetpack Compose</div>
-                    <div class="skill-item">Room Database</div>
-                    <div class="skill-item">MVVM Architecture</div>
-                    <div class="skill-item">Git & GitHub</div>
-                    <div class="skill-item">Material Design</div>
-                    <div class="skill-item">Coroutines</div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'kotlin')">
+                        Kotlin
+                        <div class="skill-tooltip" id="tooltip-kotlin">
+                            <h4>Kotlin</h4>
+                            <p>A modern, concise programming language officially supported by Google for Android development. Known for its safety features and seamless Java interoperability.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'java')">
+                        Java
+                        <div class="skill-tooltip" id="tooltip-java">
+                            <h4>Java</h4>
+                            <p>Object-oriented programming language widely used for Android development and enterprise applications. Foundation for understanding Android framework.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'python')">
+                        Python
+                        <div class="skill-tooltip" id="tooltip-python">
+                            <h4>Python</h4>
+                            <p>Versatile programming language used for scripting, automation, data analysis, and backend development. Known for its readable syntax.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'compose')">
+                        Jetpack Compose
+                        <div class="skill-tooltip" id="tooltip-compose">
+                            <h4>Jetpack Compose</h4>
+                            <p>Android's modern declarative UI toolkit that simplifies and accelerates UI development with less code, powerful tools, and intuitive Kotlin APIs.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'ktor')">
+                        Ktor
+                        <div class="skill-tooltip" id="tooltip-ktor">
+                            <h4>Ktor</h4>
+                            <p>Asynchronous framework for creating microservices and web applications in Kotlin. Lightweight and flexible for building scalable backend services.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'firebase')">
+                        Firebase
+                        <div class="skill-tooltip" id="tooltip-firebase">
+                            <h4>Firebase</h4>
+                            <p>Google's platform providing backend services including real-time database, authentication, cloud storage, and analytics for mobile apps.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'room')">
+                        Room Database
+                        <div class="skill-tooltip" id="tooltip-room">
+                            <h4>Room Database</h4>
+                            <p>An abstraction layer over SQLite that provides robust database access while harnessing the full power of SQLite with compile-time verification.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'git')">
+                        Git & GitHub
+                        <div class="skill-tooltip" id="tooltip-git">
+                            <h4>Git & GitHub</h4>
+                            <p>Version control system and cloud-based hosting service for managing code, tracking changes, and collaborating with other developers.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'material')">
+                        Material Design
+                        <div class="skill-tooltip" id="tooltip-material">
+                            <h4>Material Design</h4>
+                            <p>Google's design system that provides guidelines and components for creating beautiful, intuitive user interfaces with consistent visual language.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'rest')">
+                        REST APIs
+                        <div class="skill-tooltip" id="tooltip-rest">
+                            <h4>REST APIs</h4>
+                            <p>Architectural style for designing networked applications. Used for building scalable web services that communicate over HTTP.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -352,16 +588,105 @@
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>
                 <div class="contact-links">
+                    <a href="tel:+254797651378">📞 Call Me</a>
+                    <a href="mailto:antonykobia@gmail.com">✉️ Email Me</a>
                     <a href="https://github.com/meridianskobbie" target="_blank">GitHub</a>
                     <a href="https://www.linkedin.com/in/antony-munene-41325a37b" target="_blank">LinkedIn</a>
-                    <a href="mailto:coolcoderantoh@gmail.com">Email Me</a>
                 </div>
             </section>
         </div>
 
         <footer>
-            <p>&copy; 2024 Antony. Built with passion and code.</p>
+            <p>&copy; 2024 Antony Kobia. Built with passion and code.</p>
         </footer>
     </div>
+
+    <script>
+        let currentTooltip = null;
+
+        function toggleTooltip(event, skillId) {
+            event.stopPropagation();
+            const tooltip = document.getElementById(`tooltip-${skillId}`);
+            
+            if (currentTooltip && currentTooltip !== tooltip) {
+                currentTooltip.classList.remove('active');
+            }
+            
+            if (tooltip.classList.contains('active')) {
+                tooltip.classList.remove('active');
+                currentTooltip = null;
+            } else {
+                tooltip.classList.add('active');
+                currentTooltip = tooltip;
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            if (currentTooltip && !event.target.closest('.skill-item')) {
+                currentTooltip.classList.remove('active');
+                currentTooltip = null;
+            }
+        });
+
+        function downloadResume(event) {
+            event.preventDefault();
+            
+            const resumeContent = `ANTONY KOBIA
+📞 0797651378 | ✉️ antonykobia@gmail.com | 🎓 Kisii University
+Aspiring Software Engineer passionate about building user-focused applications and solving real-world problems.
+
+EDUCATION
+Bachelor of Science in Software Engineering
+Kisii University — Expected Graduation: 2026
+
+TECHNICAL SKILLS
+Languages: Kotlin, Java, Python
+Frontend Development: Jetpack Compose, Material You, Android UI/UX Design
+Backend Development: Ktor, REST APIs, JSON, Authentication
+Tools & Platforms: Android Studio, Git, Firebase, Play Console, Postman
+Other Skills: Full-Stack Android App Development, API Integration, App Deployment
+
+EXPERIENCE
+Advanced Android Application Developer
+Independent Developer | 2022 – Present
+• Designed, built, and deployed multiple production-grade Android applications on Google Play Store.
+• Developed full-stack Android apps using Kotlin + Jetpack Compose (frontend) and Ktor (backend).
+• Implemented offline-first architecture, modern UI/UX with Material Design 3, and Firebase integration.
+• Collaborated with testers and early adopters to improve performance, security, and user experience.
+• Experienced with version control (Git) and Play Store release management.
+
+PROJECTS
+ID Generation System
+• Developed a complete digital ID generation system with secure backend management using Ktor.
+• Implemented clean architecture ensuring modularity, maintainability, and scalability.
+• Integrated Jetpack Compose for a sleek, dynamic interface with Material You theming.
+
+Published Android Applications
+• Released multiple applications on Google Play Store, showcasing advanced Android development capabilities.
+• Designed user-friendly interfaces and efficient backend services for real-world utility.
+• Continuously updated apps based on user feedback and analytics to improve engagement and performance.
+
+ACHIEVEMENTS
+• Recognized as a successful Android developer with several live applications on Google Play Store.
+• Built and maintained complete Android applications independently, from design to deployment.
+• Developed expertise in both frontend (Jetpack Compose) and backend (Ktor), establishing a full-stack development skill set.
+
+REFERENCES
+Ms Teresa Kwamboka
+Lecturer, Department of Computer Science
+Kisii University
+Phone: +254 720 501292`;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Antony_Kobia_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
 </body>
 </html>
