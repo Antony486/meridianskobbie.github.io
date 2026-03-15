@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antony Kobia - Android Developer</title>
+    <title>Antony Kobia Munene - Android Developer</title>
     <style>
         * {
             margin: 0;
@@ -411,7 +411,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Antony Kobia</h1>
+            <h1>Antony Kobia Munene</h1>
             <p class="tagline">Aspiring Software Engineer passionate about building user-focused applications</p>
             <div class="cta-buttons">
                 <a href="#" class="btn-primary" onclick="downloadResume(event)">📄 Download Resume</a>
@@ -427,10 +427,13 @@
             <section id="about">
                 <h2>About Me</h2>
                 <p class="about-text">
-                    Hello! I'm Antony Kobia, a Software Engineering student at Kisii University with a passion for building mobile applications 
-                    that solve real-world problems. I focus on creating clean, efficient, and user-friendly 
-                    apps using modern Android development tools and best practices. I believe in writing 
-                    maintainable code and continuously learning new technologies to improve my craft.
+                    Hello! I'm Antony Kobia Munene, a Software Engineering student at Kisii University with a passion for building scalable and user-focused applications.
+                    <br><br>
+                    I specialize in Android development using Kotlin and modern Android technologies such as Jetpack Compose, Ktor, Firebase, and Material Design 3. I have experience building full-stack Android applications including backend services and production deployments.
+                    <br><br>
+                    My work focuses on writing clean, maintainable code and building applications that solve real-world problems.
+                    <br><br>
+                    Currently I am expanding my expertise into Python and Machine Learning as part of my long-term transition into advanced computer science and intelligent systems development.
                 </p>
             </section>
 
@@ -461,6 +464,23 @@
             <section id="projects">
                 <h2>Projects</h2>
                 <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>League Management System</h3>
+                        <p>
+                            A complete sports league management platform consisting of a mobile application for fans and players and an administrative web dashboard.
+                            The mobile application provides live match results, player statistics, league tables, and real-time notifications. The web admin dashboard allows league administrators to manage teams, players, matches, and league standings.
+                            The system integrates cloud services for real-time updates and push notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Firestore</span>
+                            <span class="tech-tag">Firebase Cloud Messaging</span>
+                            <span class="tech-tag">React JSX</span>
+                            <span class="tech-tag">Hilt</span>
+                        </div>
+                    </div>
                     <div class="project-card">
                         <h3>ID Generation System</h3>
                         <p>Developed a complete digital ID generation system with secure backend management using Ktor. Implemented clean architecture ensuring modularity, maintainability, and scalability with Jetpack Compose for a sleek, dynamic interface.</p>
@@ -503,6 +523,19 @@
                             <span class="tech-tag">Production</span>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Project Gallery -->
+            <section id="project-gallery">
+                <h2>Project Gallery</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:30px">
+                    <img src="https://via.placeholder.com/400x800.png?text=Android+App+Screenshot"
+                        style="width:100%;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2)">
+                    <img src="https://via.placeholder.com/400x800.png?text=Android+UI"
+                        style="width:100%;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2)">
+                    <img src="https://via.placeholder.com/400x800.png?text=Admin+Dashboard"
+                        style="width:100%;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2)">
                 </div>
             </section>
 
@@ -579,6 +612,60 @@
                             <p>Architectural style for designing networked applications. Used for building scalable web services that communicate over HTTP.</p>
                         </div>
                     </div>
+                    <!-- New Skills -->
+                    <div class="skill-item" onclick="toggleTooltip(event, 'react')">
+                        React / JSX
+                        <div class="skill-tooltip" id="tooltip-react">
+                            <h4>React / JSX</h4>
+                            <p>JavaScript library for building modern web interfaces. Used for building responsive web dashboards and admin panels.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'fcm')">
+                        Firebase Cloud Messaging
+                        <div class="skill-tooltip" id="tooltip-fcm">
+                            <h4>Firebase Cloud Messaging</h4>
+                            <p>Cloud-based messaging service used to send push notifications and real-time updates to mobile applications.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'firestore')">
+                        Firestore
+                        <div class="skill-tooltip" id="tooltip-firestore">
+                            <h4>Firestore</h4>
+                            <p>Scalable NoSQL cloud database by Firebase used to store and synchronize application data in real time.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item" onclick="toggleTooltip(event, 'hilt')">
+                        Hilt Dependency Injection
+                        <div class="skill-tooltip" id="tooltip-hilt">
+                            <h4>Hilt</h4>
+                            <p>Dependency injection library built on top of Dagger that simplifies dependency management in Android applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Badges -->
+            <section id="tech-stack">
+                <h2>Technology Stack</h2>
+                <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:15px">
+                    <img src="https://skillicons.dev/icons?i=kotlin" alt="Kotlin">
+                    <img src="https://skillicons.dev/icons?i=java" alt="Java">
+                    <img src="https://skillicons.dev/icons?i=python" alt="Python">
+                    <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase">
+                    <img src="https://skillicons.dev/icons?i=git" alt="Git">
+                    <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
+                    <img src="https://skillicons.dev/icons?i=androidstudio" alt="Android Studio">
+                    <img src="https://skillicons.dev/icons?i=react" alt="React">
+                </div>
+            </section>
+
+            <!-- GitHub Activity -->
+            <section id="github">
+                <h2>GitHub Activity</h2>
+                <div style="text-align:center;margin-top:30px">
+                    <img src="https://github-readme-stats.vercel.app/api?username=meridianskobbie&show_icons=true&theme=tokyonight" width="450" style="max-width:100%"/>
+                    <br><br>
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meridianskobbie&layout=compact&theme=tokyonight" width="450" style="max-width:100%"/>
                 </div>
             </section>
 
@@ -597,7 +684,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2024 Antony Kobia. Built with passion and code.</p>
+            <p>&copy; 2024 Antony Kobia Munene. Built with passion and code.</p>
         </footer>
     </div>
 
@@ -631,7 +718,7 @@
         function downloadResume(event) {
             event.preventDefault();
             
-            const resumeContent = `ANTONY KOBIA
+            const resumeContent = `ANTONY KOBIA MUNENE
 📞 0797651378 | ✉️ antonykobia@gmail.com | 🎓 Kisii University
 Aspiring Software Engineer passionate about building user-focused applications and solving real-world problems.
 
@@ -641,10 +728,10 @@ Kisii University — Expected Graduation: 2026
 
 TECHNICAL SKILLS
 Languages: Kotlin, Java, Python
-Frontend Development: Jetpack Compose, Material You, Android UI/UX Design
-Backend Development: Ktor, REST APIs, JSON, Authentication
-Tools & Platforms: Android Studio, Git, Firebase, Play Console, Postman
-Other Skills: Full-Stack Android App Development, API Integration, App Deployment
+Frontend Development: Jetpack Compose, Material You, Android UI/UX Design, React JSX
+Backend Development: Ktor, REST APIs, JSON, Authentication, Firestore
+Tools & Platforms: Android Studio, Git, Firebase, Firebase Cloud Messaging, Hilt, Play Console, Postman
+Other Skills: Full-Stack Android App Development, API Integration, App Deployment, Machine Learning (in progress)
 
 EXPERIENCE
 Advanced Android Application Developer
@@ -656,6 +743,11 @@ Independent Developer | 2022 – Present
 • Experienced with version control (Git) and Play Store release management.
 
 PROJECTS
+League Management System
+• Developed a full sports league management system with Android mobile app and admin web dashboard.
+• Implemented real-time updates, match results, league standings, and push notifications.
+• Technologies used: Kotlin, Jetpack Compose, Firebase Firestore, React JSX, Firebase Cloud Messaging.
+
 ID Generation System
 • Developed a complete digital ID generation system with secure backend management using Ktor.
 • Implemented clean architecture ensuring modularity, maintainability, and scalability.
@@ -681,7 +773,7 @@ Phone: +254 720 501292`;
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Antony_Kobia_Resume.txt';
+            a.download = 'Antony_Kobia_Munene_Resume.txt';
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
